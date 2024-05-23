@@ -1,4 +1,5 @@
 const exerciseService = require('../services/exercise');
+const { logger } = require('../logger');
 
 const logExercise = async (req, res) => {
   const { body, user } = req;
@@ -7,7 +8,7 @@ const logExercise = async (req, res) => {
     const result = await exerciseService.logExercise(body);
     return res.status(201).json(result);
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- logExercise --`, error);
     return res.status(400).json({ error: error.message });
   }
 };
@@ -17,7 +18,7 @@ const getAllExercises = async (req, res) => {
     const result = await exerciseService.getAllExercises();
     return res.status(200).json(result);
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- getAllExercises --`, error);
     return res.status(400).json({ error: error.message });
   }
 };
@@ -28,7 +29,7 @@ const getExerciseById = async (req, res) => {
     const result = await exerciseService.getExerciseById(id);
     return res.status(200).json(result);
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- getExerciseById --`, error);
     return res.status(400).json({ error: error.message });
   }
 };
@@ -40,7 +41,7 @@ const updateExercise = async (req, res) => {
     const result = await exerciseService.updateExercise(id, body);
     return res.status(200).json(result);
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- updateExercise --`, error);
     return res.status(400).json({ error: error.message });
   }
 };
@@ -51,7 +52,7 @@ const deleteExercise = async (req, res) => {
     const result = await exerciseService.deleteExercise(id);
     return res.status(200).json(result);
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- deleteExercise --`, error);
     return res.status(400).json({ error: error.message });
   }
 };
@@ -63,3 +64,4 @@ module.exports = {
   updateExercise,
   deleteExercise
 }
+

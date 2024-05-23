@@ -1,4 +1,5 @@
 const userService = require("../services/auth");
+const logger = require("../logger");
 
 const refreshTokens = async (req, res) => {
   const {refreshToken: oldRefreshToken} = req.body;
@@ -13,7 +14,7 @@ const refreshTokens = async (req, res) => {
     });
     return res.json({accessToken, refreshToken});
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- refreshTokens --`, error);
     return res.status(400).json({error: error.message});
   }
 };
@@ -24,7 +25,7 @@ const forgetPassword = async (req, res) => {
     await userService.forgotPassword({email});
     return res.json({message: "Password reset link sent successfully"});
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- forgetPassword --`, error);
     return res.status(400).json({error: error.message});
   }
 };
@@ -35,7 +36,7 @@ const resetPassword = async (req, res) => {
     await userService.resetPassword({token, password});
     return res.json({message: "Password updated successfully"});
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- resetPassword --`, error);
     return res.status(400).json({error: error.message});
   }
 };
@@ -46,7 +47,7 @@ const sendVerificationEmail = async (req, res) => {
     await userService.sendVerificationEmail({email});
     return res.json({message: "Verification email sent successfully"});
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- sendVerificationEmail --`, error);
     return res.status(400).json({error: error.message});
   }
 };
@@ -57,7 +58,7 @@ const verifyEmail = async (req, res) => {
     await userService.verifyEmail({token});
     return res.json({message: "Email verified successfully"});
   } catch (error) {
-    console.error(error);
+    logger.error(`Controller -- verifyEmail --`, error);
     return res.status(400).json({error: error.message});
   }
 };
