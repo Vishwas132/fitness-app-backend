@@ -71,8 +71,24 @@ This project involves developing the backend APIs for a fitness logging applicat
     npm test
     ```
 
+### Setting up email service
+- If you want to use a third-party email service, you can set up it in the `.env` file.
+- You can use [Ethereal](https://ethereal.email/) for testing purposes.
+- Create an Ethereal account
+
+- Then add your email service to the `.env` file.
+      ```
+      EMAIL_HOST=smtp.ethereal.email
+      EMAIL_PORT=587
+      ```
+- Add your ethereal email user and password to the `.env` file.
+      ```
+      EMAIL_USER=your_ethereal_email_user
+      EMAIL_PASS=your_ethereal_email_pass
+      ```
+
 ## API Documentation
-- import the provided Postman collection to explore the API endpoints.
+- Import the provided Postman collection to explore the API endpoints.
 
 ## Contributing
 - Fork the repository.

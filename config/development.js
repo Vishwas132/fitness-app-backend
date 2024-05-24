@@ -17,7 +17,7 @@ module.exports = {
     jwtRefreshExpirationTime: process.env.JWT_REFRESH_EXPIRATION_TIME || "7d"
   },
   email: {
-    emailHost: process.env.EMAIL_HOST || "smtp.googlemail.com",
+    emailHost: process.env.EMAIL_HOST || "smtp.ethereal.email",
     emailPort: process.env.EMAIL_PORT || 587,
     emailUser: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD

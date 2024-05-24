@@ -1,5 +1,5 @@
 const userService = require("../services/auth");
-const logger = require("../logger");
+const {logger} = require("../logger");
 
 const refreshTokens = async (req, res) => {
   const {refreshToken: oldRefreshToken} = req.body;

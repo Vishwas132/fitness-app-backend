@@ -1,5 +1,5 @@
 const bodyDimensionService = require("../services/bodyDimension");
-const logger = require("../logger");
+const {logger} = require("../logger");
 
 const getBodyDimensionById = async (req, res) => {
   const {id} = req.params;
