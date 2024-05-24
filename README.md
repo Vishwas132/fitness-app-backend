@@ -32,19 +32,35 @@ This project involves developing the backend APIs for a fitness logging applicat
     - Create a `.env` file in the root directory and add your configuration settings (example below):
       ```
       PORT=3000
-      DATABASE_URL=your_database_url
+      DB_HOST=localhost
+      DB_USER=your_db_user
+      DB_PASS=your_db_pass
+      DB_NAME=your_db_name
       JWT_SECRET=your_jwt_secret
       EMAIL_SERVICE=ethereal
       EMAIL_USER=your_email_user
       EMAIL_PASS=your_email_pass
       ```
 
-4. Run database seed data (if applicable):
+4. Set up database and schema:
+    - Create a database and schema (named `fitness_app`) in your PostgreSQL server, using psql or pgadmin.
+    - Add you database credential to `.env` file (example below).
+      ```
+      DB_HOST=localhost
+      DB_USER=your_db_user
+      DB_PASS=your_db_pass
+      DB_NAME=your_db_name
+      SCHEMA_NAME=fitness_app
+      ```
+
+5. Database migration (if any) will autmatically run on the first time the server starts.
+
+6. Run database seed data (if applicable):
     ```sh
     npm run seed
     ```
 
-5. Start the server:
+7. Start the server:
     ```sh
     npm start
     ```
