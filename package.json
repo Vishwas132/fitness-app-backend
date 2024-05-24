@@ -23,8 +23,7 @@
     "test": "jest",
     "dev": "nodemon --inspect app.js",
     "start": "node app",
-    "lint": "lint-staged",
-    "migration": "sequelize-cli"
+    "seed": "npx sequelize-cli db:seed:all"
   },
   "devDependencies": {
     "cls-hooked": "^4.2.2",
