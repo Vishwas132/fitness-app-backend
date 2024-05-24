@@ -86,6 +86,18 @@ This project involves developing the backend APIs for a fitness logging applicat
       EMAIL_USER=your_ethereal_email_user
       EMAIL_PASS=your_ethereal_email_pass
       ```
+- If you want to use gmail as your email service, add the following to the `.env` file.
+      ```
+      EMAIL_HOST=smtp.gmail.com
+      EMAIL_PORT=465
+      ```
+- Add your gmail email user and app password to the `.env` file.
+      ```
+      EMAIL_USER=your_gmail_email_user
+      EMAIL_PASS=your_gmail_app_pass
+      ```
+- App password is different from your gmail password. It is a temporary password that is generated for you.
+- To generate an app password, follow the instructions [here](https://support.google.com/accounts/answer/185833?hl=en).
 
 ## API Documentation
 - Import the provided Postman collection to explore the API endpoints.
